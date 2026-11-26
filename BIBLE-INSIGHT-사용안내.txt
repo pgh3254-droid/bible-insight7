@@ -1,0 +1,23 @@
+﻿======================================================================
+BIBLE INSIGHT — 압축 해제 후 실행 안내 (PC · 맥 · 안드로이드 · 아이폰)
+======================================================================
+
+이 압축 파일(.zip)을 원하는 폴더에 압축 해제한 뒤 아래 파일 중 하나를 여시면
+웹과 동일한 화면·성경 66권·히브리어/헬라어 원어 대조·큐티·시각화·3D 인물을
+그대로 사용하실 수 있습니다.
+
+1. 가장 쉬운 실행 (모바일 · PC 공통)
+  - 압축을 푼 폴더 안의 "BIBLE-INSIGHT-앱열기.html" 또는 "index.html"을
+    Chrome, Safari, 삼성 인터넷, Edge 등으로 여세요.
+  - 함께 들어 있는 "src/assets/images/" 폴더와 같은 위치에 두시면
+    모든 성경 인포그래픽·사전 일러스트 이미지도 인터넷 없이 표시됩니다.
+
+2. Windows PC 전용 간편 실행
+  - "BIBLE-INSIGHT-Windows-앱실행.bat"을 더블클릭하면 Chrome/Edge
+    독립 앱 창으로 바로 실행됩니다.
+
+3. Mac (macOS) 전용 간편 실행
+  - "BIBLE-INSIGHT-Mac-앱실행.command" 또는 "index.html"을 여세요.
+
+4. 온라인 원본 앱 주소
+  - https://ais-pre-e74rt2lkgfusvuzdkh2buu-446168785562.asia-east1.run.app/?book=genesis&chapter=1&mode=read

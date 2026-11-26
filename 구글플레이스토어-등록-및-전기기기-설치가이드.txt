@@ -1,0 +1,17 @@
+[BIBLE INSIGHT — 모든 기기 무료 사용 & 구글 플레이 스토어 등록 안내]
+
+1. 모든 기기에서 무료로 바로 실행하는 방법
+- Windows PC: 'BIBLE-INSIGHT-앱열기.html' 또는 'BIBLE-INSIGHT-Windows-앱실행.bat' 더블클릭
+- 맥(Mac): 'BIBLE-INSIGHT-앱열기.html' 또는 'BIBLE-INSIGHT-Mac-앱실행.command' 더블클릭
+- 안드로이드 / 아이폰·아이패드:
+  1) 이 폴더의 파일들을 GitHub Pages(또는 무료 웹 호스팅)에 올린 뒤 주소로 접속하면
+  2) 안드로이드(Chrome): 메뉴(⋮) → '앱 설치' 또는 '홈 화면에 추가'
+  3) 아이폰(Safari): 공유(□↑) → '홈 화면에 추가'
+  로 스토어 결제 없이 무료 앱처럼 바로 설치해 사용할 수 있습니다.
+
+2. 구글 플레이 스토어(Google Play)에 정식 등록하는 순서 (요약)
+- 1단계 (웹 주소 만들기): 이 폴더 전체를 GitHub Pages 등에 올려 https:// 주소 생성 (manifest.json, sw.js, icons 포함 완료)
+- 2단계 (구글 개발자 계정): Google Play Console 가입 (1회 25달러, 만 18세 이상 보호자/성인 명의 필요)
+- 3단계 (안드로이드 앱 파일 .aab 변환): PWABuilder(https://www.pwabuilder.com)에 내 https:// 주소 입력 → Android(.aab) 다운로드
+- 4단계 (비공개 테스트): 개인 계정은 테스터 12명 이상이 14일 동안 설치·테스트 필수
+- 5단계 (무료 출시): 가격을 '무료'로 설정하고 앱 아이콘·스크린샷 등록 후 정식 심사 제출

@@ -1,0 +1,32 @@
+{
+  "name": "BIBLE INSIGHT — 성경·큐티·지리 아틀라스",
+  "short_name": "BIBLE INSIGHT",
+  "description": "한국어 성경 66권, 매일 큐티(QT), 디즈니풍 3D 인물 애니메이션, 성경 지리 아틀라스 통합 무료 앱",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#FAF8F4",
+  "theme_color": "#1E3A8A",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
