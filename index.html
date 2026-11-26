@@ -5647,5 +5647,90 @@ three/build/three.module.js:
 */
 </script>
   <script>if('serviceWorker'in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){window.addEventListener('load',()=>{navigator.serviceWorker.register('./sw.js').catch(()=>{});});}</script>
+<script id="easy-install-banner">
+(function(){
+  if (location.protocol !== 'https:' && location.hostname !== 'localhost') return;
+  var isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  if (isStandalone) return;
+  try { if (sessionStorage.getItem('bi_hide_install_banner') === '1') return; } catch(e) {}
+
+  var ua = (navigator.userAgent || '').toLowerCase();
+  var isAndroid = /android/.test(ua);
+  var isIOS = /iphone|ipad|ipod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var isInApp = /kakaotalk|naver|line|instagram|fbav|fban/.test(ua);
+  var deferredPrompt = null;
+
+  function createBanner(htmlContent, onAction) {
+    var existing = document.getElementById('bi-easy-install-bar');
+    if (existing) existing.remove();
+    var bar = document.createElement('div');
+    bar.id = 'bi-easy-install-bar';
+    bar.style.cssText = 'position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:480px;margin:0 auto;background:#1E3A8A;color:#FFFFFF;border-radius:16px;padding:14px 16px;box-shadow:0 12px 32px rgba(0,0,0,0.28);border:2px solid #FCD34D;font-family:sans-serif;';
+    bar.innerHTML = htmlContent;
+    document.body.appendChild(bar);
+    var closeBtn = bar.querySelector('[data-bi-close]');
+    if (closeBtn) {
+      closeBtn.onclick = function() {
+        bar.remove();
+        try { sessionStorage.setItem('bi_hide_install_banner', '1'); } catch(e) {}
+      };
+    }
+    var actBtn = bar.querySelector('[data-bi-action]');
+    if (actBtn && onAction) {
+      actBtn.onclick = onAction;
+    }
+  }
+
+  window.addEventListener('beforeinstallprompt', function(e) {
+    e.preventDefault();
+    deferredPrompt = e;
+    createBanner(
+      '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;">' +
+        '<div>' +
+          '<div style="font-size:15px;font-weight:700;margin-bottom:4px;">📲 내 폰 바탕화면에 앱 설치하기</div>' +
+          '<div style="font-size:13px;color:#DBEAFE;line-height:1.4;">아래 파란 버튼을 한 번만 누르면 바로 앱 아이콘이 생깁니다.</div>' +
+        '</div>' +
+        '<button type="button" data-bi-close style="background:rgba(255,255,255,0.18);color:#fff;border:none;border-radius:8px;padding:4px 10px;font-size:13px;font-weight:700;cursor:pointer;flex-shrink:0;">닫기</button>' +
+      '</div>' +
+      '<button type="button" data-bi-action style="margin-top:10px;width:100%;background:#FCD34D;color:#1C1917;border:none;border-radius:12px;padding:12px;font-size:15px;font-weight:800;cursor:pointer;">여기를 눌러 무료 앱 설치하기</button>',
+      function() {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(function() {
+          deferredPrompt = null;
+          var b = document.getElementById('bi-easy-install-bar');
+          if (b) b.remove();
+        });
+      }
+    );
+  });
+
+  window.addEventListener('load', function() {
+    if (isAndroid && isInApp) {
+      var intentUrl = 'intent://' + location.host + location.pathname + location.search + '#Intent;scheme=https;package=com.android.chrome;end';
+      createBanner(
+        '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;">' +
+          '<div>' +
+            '<div style="font-size:15px;font-weight:700;margin-bottom:4px;">📲 앱 설치를 위해 크롬으로 열기</div>' +
+            '<div style="font-size:13px;color:#DBEAFE;line-height:1.45;">카톡 안에서는 설치가 안 됩니다. 아래 노란 버튼을 눌러 크롬에서 열어주세요!</div>' +
+          '</div>' +
+          '<button type="button" data-bi-close style="background:rgba(255,255,255,0.18);color:#fff;border:none;border-radius:8px;padding:4px 10px;font-size:13px;font-weight:700;cursor:pointer;flex-shrink:0;">닫기</button>' +
+        '</div>' +
+        '<a href="' + intentUrl + '" style="display:block;text-align:center;text-decoration:none;margin-top:10px;width:100%;background:#FCD34D;color:#1C1917;border-radius:12px;padding:12px;font-size:15px;font-weight:800;box-sizing:border-box;">크롬(Chrome)으로 바로 열기 →</a>'
+      );
+    } else if (isIOS) {
+      createBanner(
+        '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;">' +
+          '<div>' +
+            '<div style="font-size:15px;font-weight:700;margin-bottom:4px;">📲 아이폰 바탕화면에 앱 추가</div>' +
+            '<div style="font-size:13px;color:#DBEAFE;line-height:1.45;">Safari 아래 <b>공유(□↑)</b> 버튼을 누른 뒤 <b>“홈 화면에 추가”</b>를 눌러주세요.</div>' +
+          '</div>' +
+          '<button type="button" data-bi-close style="background:rgba(255,255,255,0.18);color:#fff;border:none;border-radius:8px;padding:4px 10px;font-size:13px;font-weight:700;cursor:pointer;flex-shrink:0;">닫기</button>' +
+        '</div>'
+      );
+    }
+  });
+})();
+</script>
 </body>
 </html>
